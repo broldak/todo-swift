@@ -13,6 +13,9 @@
 		2C915DE01C52B01B003C2DB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C915DDF1C52B01B003C2DB9 /* Images.xcassets */; };
 		2C915DE31C52B01B003C2DB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C915DE11C52B01B003C2DB9 /* LaunchScreen.xib */; };
 		2C915DEF1C52B01B003C2DB9 /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C915DEE1C52B01B003C2DB9 /* TodoTests.swift */; };
+		2C915DFF1C52B6B0003C2DB9 /* NewTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C915DFE1C52B6B0003C2DB9 /* NewTodoViewController.swift */; };
+		2C915E011C52B714003C2DB9 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C915E001C52B714003C2DB9 /* TodoListTableViewController.swift */; };
+		2CA2C5361C52BA110074718F /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA2C5351C52BA110074718F /* TodoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		2C915DE81C52B01B003C2DB9 /* TodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C915DED1C52B01B003C2DB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C915DEE1C52B01B003C2DB9 /* TodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTests.swift; sourceTree = "<group>"; };
+		2C915DFE1C52B6B0003C2DB9 /* NewTodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewTodoViewController.swift; path = Todo.xcodeproj/../NewTodoViewController.swift; sourceTree = SOURCE_ROOT; };
+		2C915E001C52B714003C2DB9 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
+		2CA2C5351C52BA110074718F /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoItem.swift; path = Todo.xcodeproj/../TodoItem.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,9 @@
 		2C915DD51C52B01B003C2DB9 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				2CA2C5351C52BA110074718F /* TodoItem.swift */,
+				2C915E001C52B714003C2DB9 /* TodoListTableViewController.swift */,
+				2C915DFE1C52B6B0003C2DB9 /* NewTodoViewController.swift */,
 				2C915DD81C52B01B003C2DB9 /* AppDelegate.swift */,
 				2C915DDA1C52B01B003C2DB9 /* ViewController.swift */,
 				2C915DDC1C52B01B003C2DB9 /* Main.storyboard */,
@@ -212,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA2C5361C52BA110074718F /* TodoItem.swift in Sources */,
 				2C915DDB1C52B01B003C2DB9 /* ViewController.swift in Sources */,
+				2C915DFF1C52B6B0003C2DB9 /* NewTodoViewController.swift in Sources */,
 				2C915DD91C52B01B003C2DB9 /* AppDelegate.swift in Sources */,
+				2C915E011C52B714003C2DB9 /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +421,7 @@
 				2C915DF41C52B01B003C2DB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C915DF51C52B01B003C2DB9 /* Build configuration list for PBXNativeTarget "TodoTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +430,7 @@
 				2C915DF71C52B01B003C2DB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
