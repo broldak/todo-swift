@@ -40,10 +40,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="nSw-Sp-t6C">
                             <connections>
-                                <segue destination="81K-GJ-LdH" kind="unwind" unwindAction="unwindToList:" id="abd-Da-QLL"/>
+                                <segue destination="81K-GJ-LdH" kind="unwind" unwindAction="unwindAndAddToList:" id="1mX-AZ-MJy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="nSw-Sp-t6C" id="kZj-vN-UgO"/>
+                        <outlet property="textField" destination="e3V-eK-SN8" id="AXg-iQ-p6t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="81K-GJ-LdH" userLabel="Exit" sceneMemberID="exit"/>
@@ -60,7 +64,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Jvk-Zs-ooK">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListPrototypeCell" id="Jvk-Zs-ooK">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jvk-Zs-ooK" id="vE1-3d-pLg">
                                     <autoresizingMask key="autoresizingMask"/>

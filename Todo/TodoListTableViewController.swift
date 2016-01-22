@@ -9,14 +9,37 @@
 import UIKit
 
 class TodoListTableViewController: UITableViewController {
+    //Variables
+    var todoItems: [TodoItem] = []
     
     //Custom functions
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         println("Unwinding")
     }
+    
+    @IBAction func unwindAndAddToList(segue: UIStoryboardSegue) {
+        let source = segue.sourceViewController as! NewTodoViewController
+        let todoItem:TodoItem = source.todoItem
+        
+        if todoItem.itemName != "" {
+            self.todoItems.append(todoItem)
+            self.tableView.reloadData()
+        }
+    }
+    
+    func loadInitialData() {
+        todoItems = [
+            TodoItem(itemName: "Go to dentist"),
+            TodoItem(itemName: "Get groceries"),
+            TodoItem(itemName: "Sleep")
+        ]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //load data for todo items
+        loadInitialData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,24 +58,42 @@ class TodoListTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return todoItems.count
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let tempCell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell") as! UITableViewCell
+        let todoItem = todoItems[indexPath.row]
+        
+        if (todoItem.completed) {
+            tempCell.accessoryType = UITableViewCellAccessoryType.Checkmark;
+        } else {
+            tempCell.accessoryType = UITableViewCellAccessoryType.None;
+        }
+        
+        let cell = tempCell.textLabel as UILabel!
+        cell.text = todoItem.itemName
 
         // Configure the cell...
+        
 
-        return cell
+        return tempCell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+        let tappedItem = todoItems[indexPath.row] as TodoItem
+        tappedItem.completed = !tappedItem.completed
+        
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+    }
 
     /*
     // Override to support conditional editing of the table view.
